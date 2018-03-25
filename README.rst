@@ -7,7 +7,8 @@ Dependencies
 ------------
 
 Python >= 3.6
-
+Guillotina >= 2.5.9
+Cookiecutter >= 1.6.0
 
 Installation
 ------------
@@ -21,11 +22,10 @@ This example will use virtualenv::
 Running
 -------
 
-Most simple way to get running::
+Most simple way to get running for the server::
 
-  ./bin/guillotina
+  ./bin/guillotina serve -c config.yaml
 
-
-Running Postgresql Server:
-
-    docker run --rm -e POSTGRES_DB=guillotina -e POSTGRES_USER=guillotina -p 127.0.0.1:5432:5432 --name postgres postgres:9.6
+To make a tweet "hola":
+  
+  curl -X POST -d '{"status":"hola"}'  "http://127.0.0.1:8080/@twitter"
